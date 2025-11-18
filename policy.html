@@ -1,1 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności / Privacy Policy</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Inter", sans-serif;
+            background-color: #1b1b1b;
+            color: #e6e6e6;
+            line-height: 1.65;
+        }
+
+        header {
+            background: #2a2a2a;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #3a3a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-switch button {
+            background: #444;
+            border: 1px solid #666;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .lang-switch button.active {
+            background: #ffffff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            font-size: 20px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 6px;
+        }
+
+        p, li {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 18px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        function switchLang(lang) {
+            document.getElementById("pl").classList.toggle("hidden", lang !== "pl");
+            document.getElementById("en").classList.toggle("hidden", lang !== "en");
+
+            document.getElementById("btn-pl").classList.toggle("active", lang === "pl");
+            document.getElementById("btn-en").classList.toggle("active", lang === "en");
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Privacy Policy / Polityka Prywatności</h1>
+
+    <div class="lang-switch">
+        <button id="btn-pl" class="active" onclick="switchLang('pl')">PL</button>
+        <button id="btn-en" onclick="switchLang('en')">EN</button>
+    </div>
+</header>
+
+<main>
+
+<!-- PL VERSION -->
+<div id="pl">
+
+<h2>Polityka Prywatności (RODO)</h2>
+<p><strong>Wersja: 1.1 • Ostatnia aktualizacja: 05.11.2025</strong><br>
+Kontakt ds. prywatności / IOD: <a href="mailto:book.club.poland@gmail.com">book.club.poland@gmail.com</a></p>
+
+<h2>1. Postanowienia ogólne</h2>
+<p>1.1. Niniejsza Polityka wyjaśnia, w jaki sposób dane osobowe są zbierane i przetwarzane w aplikacji mobilnej „Klub Książki".</p>
+<p>1.2. Polityka jest zgodna z Rozporządzeniem (UE) 2016/679 (RODO).</p>
+<p>1.3. Dane użytkowników są przetwarzane zgodnie z prawem, rzetelnie i w sposób przejrzysty, wyłącznie w określonych celach.</p>
+
+<h2>2. Dane, które zbieramy</h2>
+<p>• adres e-mail, hasło (zahashowane), data rejestracji<br>
+• opcjonalny profil: imię, avatar, bio, preferencje<br>
+• dane wydawcy: nazwa, adres, NIP/REGON, skany<br>
+• dane techniczne: IP, urządzenie, statystyki anonimowe<br>
+• aktywność: oceny, komentarze, historia czytania<br>
+• wiadomości między użytkownikami</p>
+
+<h2>3. Podstawy prawne</h2>
+<p>• wykonanie umowy (Art. 6 ust. 1 lit. b)<br>
+• obowiązki prawne (Art. 6 ust. 1 lit. c)<br>
+• uzasadniony interes (Art. 6 ust. 1 lit. f)<br>
+• zgoda (Art. 6 ust. 1 lit. a)</p>
+
+<h2>4. Cele przetwarzania</h2>
+<p>Zarządzanie kontem, personalizacja, bezpieczeństwo, moderacja treści, analityka, reklamy (po zgodzie użytkownika).</p>
+
+<h2>5. Okres przechowywania</h2>
+<p>Dane są przechowywane tak długo, jak konto jest aktywne. Po usunięciu — kasowane zgodnie z zasadami RODO.</p>
+
+<h2>6. Udostępnianie danych</h2>
+<p>Supabase, Expo, SendGrid, AdMob — zgodnie z SCC.</p>
+
+<h2>7. Prawa użytkownika</h2>
+<p>Dostęp, sprostowanie, usunięcie, ograniczenie, sprzeciw, przenoszenie danych, wycofanie zgody.</p>
+
+<h2>8. Reklamy i personalizacja</h2>
+<p>Reklamy wyświetlane są tylko po zgodzie. AdMob gromadzi minimalne dane techniczne.</p>
+
+<h2>9–13. Pozostałe postanowienia</h2>
+<p>Bezpieczeństwo, powiadomienia push, dane dzieci, zmiany Polityki, kontakt do Administratora.</p>
+
+<p><strong>Administrator:</strong><br>
+Aliaksandra Lazarchyk, Tataraku 3/1, Baszkówka, 05-503, Polska</p>
+
+</div>
+
+<!-- EN VERSION -->
+<div id="en" class="hidden">
+
+<h2>Privacy Policy (GDPR)</h2>
+<p><strong>Version: 1.1 • Last updated: 05.11.2025</strong><br>
+Privacy Contact / DPO: <a href="mailto:book.club.poland@gmail.com">book.club.poland@gmail.com</a></p>
+
+<h2>1. General Information</h2>
+<p>This Policy explains how personal data is collected and processed in the “Klub Książki” mobile application. It complies with Regulation (EU) 2016/679 (GDPR).</p>
+
+<h2>2. Data We Collect</h2>
+<p>Email, hashed password, profile data, publisher verification data, technical data, activity data, communication data.</p>
+
+<h2>3. Legal Bases</h2>
+<p>Contract, legal obligations, legitimate interests, consent.</p>
+
+<h2>4. Purposes</h2>
+<p>Account management, personalization, security, moderation, analytics, ads (upon consent).</p>
+
+<h2>5. Retention</h2>
+<p>Data is kept while the account is active; deleted after removal according to GDPR standards.</p>
+
+<h2>6. Sharing</h2>
+<p>Supabase, Expo, SendGrid, AdMob — all under SCC.</p>
+
+<h2>7. User Rights</h2>
+<p>Access, rectification, erasure, restriction, portability, objection, and consent withdrawal.</p>
+
+<h2>8. Ads & Personalization</h2>
+<p>AdMob ads displayed only after user consent. Minimal technical data is collected.</p>
+
+<h2>9–13. Other</h2>
+<p>Security, push notifications, children's data, updates, and contact details.</p>
+
+<p><strong>Data Controller:</strong><br>
+Aliaksandra Lazarchyk, Tataraku 3/1, Baszkówka, 05-503, Poland</p>
+
+</div>
+
+</main>
+
+</body>
+</html>
 
