@@ -1,199 +1,811 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polityka Prywatności / Privacy Policy</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Polityka Prywatności / Privacy Policy</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "Inter", sans-serif;
-            background-color: #1b1b1b;
-            color: #e6e6e6;
-            line-height: 1.65;
-        }
+  <!-- Шрифт -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-        header {
-            background: #2a2a2a;
-            padding: 20px;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #3a3a3a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  <style>
+    :root {
+      --bg: #1b1b1b;
+      --bg-elevated: #222;
+      --header-bg: #2a2a2a;
+      --border-subtle: #3a3a3a;
+      --accent: #f5c76a;
+      --accent-soft: rgba(245, 199, 106, 0.12);
+      --text-main: #e6e6e6;
+      --text-muted: #a5a5a5;
+      --radius-lg: 14px;
+    }
 
-        h1 {
-            margin: 0;
-            font-size: 22px;
-            font-weight: 600;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .lang-switch {
-            display: flex;
-            gap: 10px;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+    }
 
-        .lang-switch button {
-            background: #444;
-            border: 1px solid #666;
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .lang-switch button.active {
-            background: #ffffff;
-            color: #000;
-            border-color: #fff;
-        }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .brand-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
 
-        h2 {
-            margin-top: 30px;
-            font-size: 20px;
-            border-bottom: 1px solid #444;
-            padding-bottom: 6px;
-        }
+    .brand-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
 
-        p, li {
-            font-size: 15px;
-            margin-bottom: 10px;
-        }
+    .lang-switch {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 999px;
+      background: #171717;
+      border: 1px solid var(--border-subtle);
+      gap: 4px;
+    }
 
-        ul {
-            padding-left: 18px;
-        }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.16s ease, color 0.16s ease,
+        transform 0.08s ease;
+    }
 
-        .hidden {
-            display: none;
-        }
-    </style>
+    .lang-btn.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
 
-    <script>
-        function switchLang(lang) {
-            document.getElementById("pl").classList.toggle("hidden", lang !== "pl");
-            document.getElementById("en").classList.toggle("hidden", lang !== "en");
+    main {
+      max-width: 900px;
+      margin: 26px auto 40px;
+      padding: 0 16px 40px;
+    }
 
-            document.getElementById("btn-pl").classList.toggle("active", lang === "pl");
-            document.getElementById("btn-en").classList.toggle("active", lang === "en");
-        }
-    </script>
+    .card {
+      background: var(--bg-elevated);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 26px 22px 28px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    @media (min-width: 720px) {
+      .card {
+        padding: 30px 32px 32px;
+      }
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .badge {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #151515;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 22px;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 6px 0;
+      font-size: 14px;
+    }
+
+    ol {
+      margin: 6px 0 6px 20px;
+      padding-left: 6px;
+      font-size: 14px;
+    }
+
+    ul {
+      margin: 6px 0 6px 20px;
+      padding-left: 6px;
+      font-size: 14px;
+    }
+
+    li + li {
+      margin-top: 4px;
+    }
+
+    .section-number {
+      font-weight: 600;
+      margin-right: 4px;
+    }
+
+    .policy {
+      display: none;
+    }
+
+    .policy.active {
+      display: block;
+    }
+
+    .contact-block {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #181818;
+      border: 1px dashed var(--border-subtle);
+      font-size: 14px;
+    }
+
+    .emoji-label {
+      font-size: 16px;
+      margin-right: 6px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>Privacy Policy / Polityka Prywatności</h1>
-
-    <div class="lang-switch">
-        <button id="btn-pl" class="active" onclick="switchLang('pl')">PL</button>
-        <button id="btn-en" onclick="switchLang('en')">EN</button>
+  <header>
+    <div class="brand">
+      <span class="brand-title">Klub Książki</span>
+      <span class="brand-subtitle">Privacy Policy / Polityka Prywatności</span>
     </div>
-</header>
 
-<main>
+    <div class="lang-switch" aria-label="Language switch">
+      <button
+        class="lang-btn active"
+        data-lang="pl"
+        type="button"
+        onclick="setLanguage('pl')"
+      >
+        PL
+      </button>
+      <button
+        class="lang-btn"
+        data-lang="en"
+        type="button"
+        onclick="setLanguage('en')"
+      >
+        EN
+      </button>
+    </div>
+  </header>
 
-<!-- PL VERSION -->
-<div id="pl">
+  <main>
+    <article class="card">
+      <!-- POLISH VERSION -->
+      <section id="policy-pl" class="policy active">
+        <div class="meta-row">
+          <span class="badge">Wersja: 1.1 • 05.11.2025</span>
+          <span class="badge">RODO / GDPR</span>
+        </div>
 
-<h2>Polityka Prywatności (RODO)</h2>
-<p><strong>Wersja: 1.1 • Ostatnia aktualizacja: 05.11.2025</strong><br>
-Kontakt ds. prywatności / IOD: <a href="mailto:book.club.poland@gmail.com">book.club.poland@gmail.com</a></p>
+        <h1>Polityka Prywatności (RODO)</h1>
+        <p><strong>Wersja: 1.1 • Ostatnia aktualizacja: 05.11.2025</strong></p>
+        <p>
+          <strong>Kontakt ds. prywatności / IOD:</strong>
+          <a href="mailto:book.club.poland@gmail.com"
+            >book.club.poland@gmail.com</a
+          >
+        </p>
 
-<h2>1. Postanowienia ogólne</h2>
-<p>1.1. Niniejsza Polityka wyjaśnia, w jaki sposób dane osobowe są zbierane i przetwarzane w aplikacji mobilnej „Klub Książki".</p>
-<p>1.2. Polityka jest zgodna z Rozporządzeniem (UE) 2016/679 (RODO).</p>
-<p>1.3. Dane użytkowników są przetwarzane zgodnie z prawem, rzetelnie i w sposób przejrzysty, wyłącznie w określonych celach.</p>
+        <h2>1. Postanowienia ogólne</h2>
+        <p>
+          1.1. Niniejsza Polityka wyjaśnia, w jaki sposób dane osobowe są
+          zbierane i przetwarzane w aplikacji mobilnej „Klub Książki”
+          („Serwis”).
+        </p>
+        <p>
+          1.2. Polityka jest zgodna z Rozporządzeniem (UE) 2016/679 (RODO).
+        </p>
+        <p>
+          1.3. Administrator zapewnia, że dane użytkowników są przetwarzane
+          zgodnie z prawem, rzetelnie i w sposób przejrzysty, wyłącznie w
+          określonych celach.
+        </p>
 
-<h2>2. Dane, które zbieramy</h2>
-<p>• adres e-mail, hasło (zahashowane), data rejestracji<br>
-• opcjonalny profil: imię, avatar, bio, preferencje<br>
-• dane wydawcy: nazwa, adres, NIP/REGON, skany<br>
-• dane techniczne: IP, urządzenie, statystyki anonimowe<br>
-• aktywność: oceny, komentarze, historia czytania<br>
-• wiadomości między użytkownikami</p>
+        <h2>2. Dane, które zbieramy</h2>
+        <p>
+          2.1. <strong>Dane podstawowe:</strong> adres e-mail, hasło
+          (zahashowane), data rejestracji.
+        </p>
+        <p>
+          2.2. <strong>Dobrowolnie podawane dane profilu:</strong> imię,
+          avatar, bio, język interfejsu, preferencje czytelnicze.
+        </p>
+        <p>
+          2.3. <strong>Dane weryfikacji wydawcy:</strong> nazwa/firma, telefon,
+          adres, NIP/REGON, skan dowodu osobistego (osoby fizyczne) lub
+          dokumenty rejestracyjne (firmy).
+        </p>
+        <p>
+          2.4. <strong>Dane techniczne:</strong> adres IP, user agent,
+          informacje o urządzeniu, anonimowe statystyki użytkowania, tokeny
+          sesji.
+        </p>
+        <p>
+          2.5. <strong>Dane aktywności:</strong> oceny, komentarze, ulubione,
+          historia czytania, uczestnictwo w Gabinetach Czytelniczych.
+        </p>
+        <p>
+          2.6. <strong>Dane komunikacji:</strong> wiadomości między
+          użytkownikami, dyskusje w klubach książki.
+        </p>
 
-<h2>3. Podstawy prawne</h2>
-<p>• wykonanie umowy (Art. 6 ust. 1 lit. b)<br>
-• obowiązki prawne (Art. 6 ust. 1 lit. c)<br>
-• uzasadniony interes (Art. 6 ust. 1 lit. f)<br>
-• zgoda (Art. 6 ust. 1 lit. a)</p>
+        <h2>3. Podstawy prawne</h2>
+        <p>
+          3.1. Art. 6 ust. 1 lit. b RODO – wykonanie umowy (zarządzanie kontem,
+          świadczenie Serwisu).
+        </p>
+        <p>
+          3.2. Art. 6 ust. 1 lit. c RODO – przestrzeganie obowiązków prawnych
+          (księgowość, żądania organów).
+        </p>
+        <p>
+          3.3. Art. 6 ust. 1 lit. f RODO – uzasadnione interesy
+          (bezpieczeństwo, roszczenia, marketing własny).
+        </p>
+        <p>
+          3.4. Art. 6 ust. 1 lit. a RODO – zgoda (newsletter, powiadomienia
+          push, spersonalizowane reklamy, analityka).
+        </p>
 
-<h2>4. Cele przetwarzania</h2>
-<p>Zarządzanie kontem, personalizacja, bezpieczeństwo, moderacja treści, analityka, reklamy (po zgodzie użytkownika).</p>
+        <h2>4. Cele przetwarzania</h2>
+        <p>4.1. Zarządzanie kontem, uwierzytelnianie i personalizacja.</p>
+        <p>4.2. Weryfikacja wydawców i zapobieganie oszustwom.</p>
+        <p>4.3. Moderacja treści i egzekwowanie Regulaminu Serwisu.</p>
+        <p>4.4. Ulepszanie Serwisu, analityka i statystyki anonimowe.</p>
+        <p>4.5. Bezpieczeństwo i wykrywanie nadużyć.</p>
 
-<h2>5. Okres przechowywania</h2>
-<p>Dane są przechowywane tak długo, jak konto jest aktywne. Po usunięciu — kasowane zgodnie z zasadami RODO.</p>
+        <h2>5. Okres przechowywania</h2>
+        <p>5.1. Dane są przechowywane, dopóki konto jest aktywne.</p>
+        <p>
+          5.2. Po usunięciu dane są kasowane, z wyjątkiem logów (90 dni) oraz
+          danych prawno-księgowych (5 lat).
+        </p>
+        <p>
+          5.3. Oceny i komentarze mogą pozostać w formie zanonimizowanej.
+        </p>
+        <p>5.4. Logi błędów: przechowywane 30 dni.</p>
 
-<h2>6. Udostępnianie danych</h2>
-<p>Supabase, Expo, SendGrid, AdMob — zgodnie z SCC.</p>
+        <h2>6. Udostępnianie danych</h2>
+        <p>6.1. Podwykonawcy:</p>
+        <ul>
+          <li>Supabase (hosting bazy danych) – USA/UE</li>
+          <li>Expo (hosting aplikacji mobilnej) – USA</li>
+          <li>SendGrid (wysyłka e-maili) – USA</li>
+        </ul>
+        <p>
+          Wszyscy działają na podstawie SCC lub odpowiednich mechanizmów
+          transferu.
+        </p>
+        <p>6.2. Organy publiczne: na podstawie zgodnych z prawem żądań.</p>
+        <p>
+          6.3. Inne podmioty: brak sprzedaży ani udostępniania poza wymienionymi
+          celami.
+        </p>
+        <p>
+          6.4. Transfer poza EOG: dozwolony tylko na podstawie SCC lub Privacy
+          Shield 2.0 (jeśli ma zastosowanie).
+        </p>
 
-<h2>7. Prawa użytkownika</h2>
-<p>Dostęp, sprostowanie, usunięcie, ograniczenie, sprzeciw, przenoszenie danych, wycofanie zgody.</p>
+        <h2>7. Prawa użytkownika</h2>
+        <p>Użytkownicy mają prawo do:</p>
+        <ul>
+          <li>Dostępu (Art. 15)</li>
+          <li>Sprostowania (Art. 16)</li>
+          <li>Usunięcia (Art. 17)</li>
+          <li>Ograniczenia przetwarzania (Art. 18)</li>
+          <li>Przenoszenia danych (Art. 20)</li>
+          <li>Sprzeciwu (Art. 21)</li>
+        </ul>
+        <p>Przetwarzanie oparte na zgodzie można wycofać w każdej chwili.</p>
+        <p>
+          Skargi można składać do organu nadzorczego (UODO): ul. Stawki 2,
+          00-193 Warszawa, <a href="https://www.uodo.gov.pl">www.uodo.gov.pl</a
+          >.
+        </p>
 
-<h2>8. Reklamy i personalizacja</h2>
-<p>Reklamy wyświetlane są tylko po zgodzie. AdMob gromadzi minimalne dane techniczne.</p>
+        <h2>8. Pliki cookie i śledzenie</h2>
+        <p>
+          8.1. Niezbędne pliki cookie: token sesji, ustawienia języka (brak
+          wymaganej zgody).
+        </p>
+        <p>
+          8.2. Pliki cookie analityczne: statystyki użytkowania i dane o
+          awariach (wymagana zgoda).
+        </p>
+        <p>
+          8.3. Pliki cookie można wyczyścić, usuwając dane aplikacji lub poprzez
+          ustawienia systemowe.
+        </p>
 
-<h2>9–13. Pozostałe postanowienia</h2>
-<p>Bezpieczeństwo, powiadomienia push, dane dzieci, zmiany Polityki, kontakt do Administratora.</p>
+        <h2>8A. Reklamy i spersonalizowane ogłoszenia</h2>
+        <p>
+          8A.1. Serwis może wyświetlać reklamy dostarczane przez zewnętrzne
+          sieci reklamowe (np. Google AdMob). Ci partnerzy mogą zbierać
+          ograniczone dane techniczne i behawioralne w celu wyświetlania i
+          pomiaru reklam.
+        </p>
+        <p>8A.2. Kategorie danych wykorzystywanych do reklam:</p>
+        <ul>
+          <li>Identyfikator reklamowy (Android Advertising ID)</li>
+          <li>
+            Przybliżone zainteresowania (np. preferowane gatunki, nawyki
+            czytelnicze)
+          </li>
+          <li>
+            Zagregowane dane o interakcjach (wyświetlenia reklam, kliknięcia,
+            długość sesji)
+          </li>
+          <li>Dane o urządzeniu (model, wersja systemu operacyjnego, język)</li>
+        </ul>
+        <p>8A.3. Cele:</p>
+        <ul>
+          <li>Wyświetlanie reklam w aplikacji</li>
+          <li>Pomiar wydajności reklam</li>
+          <li>
+            Dostarczanie treści odpowiednich do zainteresowań użytkownika
+          </li>
+        </ul>
+        <p>8A.4. Zgoda i personalizacja:</p>
+        <ul>
+          <li>
+            Spersonalizowane reklamy są wyświetlane tylko po wyrażeniu zgody
+            przez użytkownika w formularzu zgody przy pierwszym uruchomieniu.
+          </li>
+          <li>
+            Zgodę można wycofać w każdej chwili w ustawieniach aplikacji lub
+            kontrolach prywatności urządzenia (Ustawienia → Prywatność →
+            Reklamy → Usuń identyfikator reklamowy / Wyłącz personalizację
+            reklam).
+          </li>
+        </ul>
+        <p>8A.5. Dostawcy zewnętrzni:</p>
+        <ul>
+          <li>
+            Google AdMob (Google Ireland Limited / Google LLC) – polityka
+            prywatności:
+            <a
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://policies.google.com/technologies/ads</a
+            >
+          </li>
+        </ul>
+        <p>
+          8A.6. Serwis nie sprzedaje danych osobowych, nie śledzi aktywności
+          użytkownika poza aplikacją i nie wykorzystuje danych wrażliwych
+          (zdrowie, religia, orientacja seksualna itp.) do targetowania.
+        </p>
 
-<p><strong>Administrator:</strong><br>
-Aliaksandra Lazarchyk, Tataraku 3/1, Baszkówka, 05-503, Polska</p>
+        <h2>9. Powiadomienia push</h2>
+        <p>9.1. Wysyłane tylko za wyraźną zgodą użytkownika.</p>
+        <p>
+          9.2. Token push jest przechowywany w bazie danych i może zostać
+          usunięty po wycofaniu zgody.
+        </p>
 
-</div>
+        <h2>10. Bezpieczeństwo danych</h2>
+        <p>
+          10.1. Zabezpieczenia techniczne: szyfrowanie TLS/SSL, zahashowane
+          hasła (bcrypt), kopie zapasowe i kontrola dostępu.
+        </p>
+        <p>
+          10.2. Środki organizacyjne: dostęp tylko dla upoważnionych osób,
+          szkolenia pracowników, procedury reagowania na incydenty.
+        </p>
+        <p>
+          10.3. Powiadomienie o naruszeniu: UODO i dotknięci użytkownicy są
+          informowani w ciągu 72 godzin, jeśli ryzyko jest wysokie.
+        </p>
 
-<!-- EN VERSION -->
-<div id="en" class="hidden">
+        <h2>11. Dane dzieci</h2>
+        <p>11.1. Serwis jest przeznaczony dla użytkowników w wieku 16+.</p>
+        <p>
+          11.2. Użytkownicy poniżej 16. roku życia wymagają zgody rodzica lub
+          opiekuna.
+        </p>
+        <p>
+          11.3. Jeśli wykryte zostanie korzystanie przez osoby niepełnoletnie,
+          powiązane dane zostaną usunięte.
+        </p>
 
-<h2>Privacy Policy (GDPR)</h2>
-<p><strong>Version: 1.1 • Last updated: 05.11.2025</strong><br>
-Privacy Contact / DPO: <a href="mailto:book.club.poland@gmail.com">book.club.poland@gmail.com</a></p>
+        <h2>12. Zmiany w Polityce</h2>
+        <p>12.1. Niniejsza Polityka może zostać zaktualizowana w dowolnym momencie.</p>
+        <p>
+          12.2. Istotne aktualizacje zostaną ogłoszone co najmniej 30 dni
+          wcześniej.
+        </p>
+        <p>
+          12.3. Kontynuowanie korzystania z Serwisu oznacza akceptację
+          zaktualizowanej Polityki.
+        </p>
 
-<h2>1. General Information</h2>
-<p>This Policy explains how personal data is collected and processed in the “Klub Książki” mobile application. It complies with Regulation (EU) 2016/679 (GDPR).</p>
+        <h2>13. Kontakt i informacje o Administratorze</h2>
 
-<h2>2. Data We Collect</h2>
-<p>Email, hashed password, profile data, publisher verification data, technical data, activity data, communication data.</p>
+        <div class="contact-block">
+          <p>
+            <span class="emoji-label">📧</span>
+            <strong>Kontakt ds. prywatności i ochrony danych:</strong><br />
+            <a href="mailto:book.club.poland@gmail.com"
+              >book.club.poland@gmail.com</a
+            >
+          </p>
+          <p>
+            <span class="emoji-label">👤</span>
+            <strong>Administrator danych:</strong><br />
+            Aliaksandra Lazarchyk
+          </p>
+          <p>
+            <span class="emoji-label">📍</span>
+            Tataraku 3/1, m. Baszkówka, 05-503, Polska
+          </p>
+        </div>
 
-<h2>3. Legal Bases</h2>
-<p>Contract, legal obligations, legitimate interests, consent.</p>
+        <p class="footer-note">
+          ✅ Niniejsza wersja (1.1) zawiera sekcję „Reklamy i spersonalizowane
+          ogłoszenia” i jest zgodna z wymaganiami Google Play, AdMob i RODO.
+        </p>
+      </section>
 
-<h2>4. Purposes</h2>
-<p>Account management, personalization, security, moderation, analytics, ads (upon consent).</p>
+      <!-- ENGLISH VERSION -->
+      <section id="policy-en" class="policy" lang="en">
+        <div class="meta-row">
+          <span class="badge">Version: 1.1 • 05.11.2025</span>
+          <span class="badge">GDPR</span>
+        </div>
 
-<h2>5. Retention</h2>
-<p>Data is kept while the account is active; deleted after removal according to GDPR standards.</p>
+        <h1>Privacy Policy (GDPR)</h1>
+        <p><strong>Version: 1.1 • Last updated: 05.11.2025</strong></p>
+        <p>
+          <strong>Privacy Contact / DPO:</strong>
+          <a href="mailto:book.club.poland@gmail.com"
+            >book.club.poland@gmail.com</a
+          >
+        </p>
 
-<h2>6. Sharing</h2>
-<p>Supabase, Expo, SendGrid, AdMob — all under SCC.</p>
+        <h2>1. General</h2>
+        <p>
+          1.1. This Policy explains how personal data is collected and processed
+          within the mobile application “Klub Książki” (“the Service”).
+        </p>
+        <p>
+          1.2. The Policy complies with Regulation (EU) 2016/679 (GDPR).
+        </p>
+        <p>
+          1.3. The Controller ensures that user data is processed lawfully,
+          fairly, and transparently, and only for specified purposes.
+        </p>
 
-<h2>7. User Rights</h2>
-<p>Access, rectification, erasure, restriction, portability, objection, and consent withdrawal.</p>
+        <h2>2. Data We Collect</h2>
+        <p>
+          2.1. <strong>Basic data:</strong> email, password (stored only in a
+          hashed form — impossible to reverse), registration date.
+        </p>
+        <p>
+          2.2. <strong>Voluntarily provided profile data:</strong> name, avatar,
+          bio, interface language, reading preferences.
+        </p>
+        <p>
+          2.3. <strong>Publisher verification data:</strong> name/company, phone
+          number, address, tax identifiers (NIP/REGON), ID scan (for
+          individuals) or registration documents (for companies).
+        </p>
+        <p>
+          2.4. <strong>Technical data:</strong> IP address, user agent, device
+          information, anonymous usage statistics, session tokens.
+        </p>
+        <p>
+          2.5. <strong>Activity data:</strong> ratings, comments, favorites,
+          reading history, participation in Reading Rooms.
+        </p>
+        <p>
+          2.6. <strong>Communication data:</strong> messages exchanged between
+          users and discussions within book clubs.
+        </p>
 
-<h2>8. Ads & Personalization</h2>
-<p>AdMob ads displayed only after user consent. Minimal technical data is collected.</p>
+        <h2>3. Legal Bases</h2>
+        <p>
+          3.1. Art. 6(1)(b) GDPR – performance of a contract (account
+          management, providing the Service).
+        </p>
+        <p>
+          3.2. Art. 6(1)(c) GDPR – compliance with legal obligations
+          (accounting, lawful authority requests).
+        </p>
+        <p>
+          3.3. Art. 6(1)(f) GDPR – legitimate interests (security, claims, own
+          marketing).
+        </p>
+        <p>
+          3.4. Art. 6(1)(a) GDPR – consent (newsletter, push notifications,
+          personalized ads, analytics).
+        </p>
 
-<h2>9–13. Other</h2>
-<p>Security, push notifications, children's data, updates, and contact details.</p>
+        <h2>4. Purposes of Processing</h2>
+        <p>4.1. Account management, authentication, and personalization.</p>
+        <p>4.2. Publisher verification and fraud prevention.</p>
+        <p>4.3. Content moderation and enforcement of Terms of Service.</p>
+        <p>4.4. Service improvement, analytics, and anonymous statistics.</p>
+        <p>4.5. Security and detection of abuse.</p>
 
-<p><strong>Data Controller:</strong><br>
-Aliaksandra Lazarchyk, Tataraku 3/1, Baszkówka, 05-503, Poland</p>
+        <h2>5. Retention</h2>
+        <p>5.1. Data is stored as long as the account remains active.</p>
+        <p>
+          5.2. After account deletion, data is erased except logs (90 days) and
+          accounting/legal records (5 years).
+        </p>
+        <p>5.3. Ratings and comments may remain in anonymized form.</p>
+        <p>5.4. Error logs are retained for 30 days.</p>
 
-</div>
+        <h2>6. Sharing Data</h2>
+        <p>6.1. Sub-processors:</p>
+        <ul>
+          <li>Supabase (database hosting) – USA/EU</li>
+          <li>Expo (mobile app hosting) – USA</li>
+          <li>SendGrid (email delivery) – USA</li>
+        </ul>
+        <p>
+          All sub-processors operate under Standard Contractual Clauses (SCC)
+          or other adequate transfer mechanisms.
+        </p>
+        <p>6.2. Public authorities: upon lawful request only.</p>
+        <p>
+          6.3. Other parties: no sale or disclosure of personal data beyond the
+          purposes listed in this Policy.
+        </p>
+        <p>
+          6.4. Transfers outside the EEA: allowed only under SCC or an adequate
+          framework (e.g., Privacy Shield 2.0, if applicable).
+        </p>
 
-</main>
+        <h2>7. User Rights</h2>
+        <p>Users have the right to:</p>
+        <ul>
+          <li>Access (Art. 15)</li>
+          <li>Rectification (Art. 16)</li>
+          <li>Erasure (Art. 17)</li>
+          <li>Restriction of processing (Art. 18)</li>
+          <li>Data portability (Art. 20)</li>
+          <li>Objection (Art. 21)</li>
+        </ul>
+        <p>
+          Processing based on consent can be withdrawn at any time without
+          affecting the lawfulness of processing before withdrawal.
+        </p>
+        <p>
+          Complaints may be filed with the supervisory authority (UODO): ul.
+          Stawki 2, 00-193 Warsaw,
+          <a href="https://www.uodo.gov.pl">www.uodo.gov.pl</a>.
+        </p>
 
+        <h2>8. Cookies &amp; Tracking</h2>
+        <p>
+          8.1. Necessary cookies: session token, language settings (no consent
+          required).
+        </p>
+        <p>
+          8.2. Analytics cookies: usage statistics and crash data (consent
+          required).
+        </p>
+        <p>
+          8.3. Cookies can be cleared by deleting app data or via system
+          settings.
+        </p>
+
+        <h2>8A. Advertising and Personalized Ads</h2>
+        <p>
+          8A.1. The Service may display advertising provided by third-party ad
+          networks (e.g., Google AdMob). These partners may collect limited
+          technical and behavioral data to display and measure ads.
+        </p>
+        <p>8A.2. Categories of data used for advertising:</p>
+        <ul>
+          <li>Advertising ID (Android Advertising ID)</li>
+          <li>Approximate interests (e.g., preferred genres, reading habits)</li>
+          <li>
+            Aggregated interaction data (ad views, clicks, session length)
+          </li>
+          <li>Device data (model, OS version, language)</li>
+        </ul>
+        <p>8A.3. Purposes:</p>
+        <ul>
+          <li>Displaying ads inside the application</li>
+          <li>Measuring ad performance</li>
+          <li>Providing content relevant to user interests</li>
+        </ul>
+        <p>8A.4. Consent and personalization:</p>
+        <ul>
+          <li>
+            Personalized ads are displayed only after the user gives consent
+            through the consent form at first launch.
+          </li>
+          <li>
+            Consent can be withdrawn at any time in the app settings or via
+            device privacy controls (Settings → Privacy → Ads → Delete
+            advertising ID / Disable ad personalization).
+          </li>
+        </ul>
+        <p>8A.5. Third-party providers:</p>
+        <ul>
+          <li>
+            Google AdMob (Google Ireland Limited / Google LLC) – Privacy Policy:
+            <a
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://policies.google.com/technologies/ads</a
+            >
+          </li>
+        </ul>
+        <p>
+          8A.6. The Service does not sell personal data, does not track user
+          activity outside the app, and does not use sensitive data (health,
+          religion, sexual orientation, etc.) for targeting.
+        </p>
+
+        <h2>9. Push Notifications</h2>
+        <p>9.1. Sent only with explicit user consent.</p>
+        <p>
+          9.2. The push token is stored in the database and may be deleted upon
+          withdrawal of consent.
+        </p>
+
+        <h2>10. Data Security</h2>
+        <p>
+          10.1. Technical safeguards: TLS/SSL encryption, hashed passwords
+          (bcrypt), backups, and access control.
+        </p>
+        <p>
+          10.2. Organizational measures: access only on a need-to-know basis,
+          staff training, incident response procedures.
+        </p>
+        <p>
+          10.3. Breach notification: UODO and affected users are informed within
+          72 hours if the risk is high.
+        </p>
+
+        <h2>11. Children’s Data</h2>
+        <p>11.1. The Service is intended for users aged 16+.</p>
+        <p>
+          11.2. Users under 16 require parental or guardian consent to use the
+          Service.
+        </p>
+        <p>
+          11.3. If under-age use is detected, related data will be deleted.
+        </p>
+
+        <h2>12. Changes to This Policy</h2>
+        <p>12.1. This Policy may be updated at any time.</p>
+        <p>
+          12.2. Significant updates will be announced at least 30 days in
+          advance.
+        </p>
+        <p>
+          12.3. Continued use of the Service after changes become effective
+          means acceptance of the updated Policy.
+        </p>
+
+        <h2>13. Contact &amp; Controller Information</h2>
+
+        <div class="contact-block">
+          <p>
+            <span class="emoji-label">📧</span>
+            <strong>Privacy &amp; Data Protection Contact:</strong><br />
+            <a href="mailto:book.club.poland@gmail.com"
+              >book.club.poland@gmail.com</a
+            >
+          </p>
+          <p>
+            <span class="emoji-label">👤</span>
+            <strong>Data Controller:</strong><br />
+            Aliaksandra Lazarchyk
+          </p>
+          <p>
+            <span class="emoji-label">📍</span>
+            Tataraku 3/1, m. Baszkówka, 05-503, Poland
+          </p>
+        </div>
+
+        <p class="footer-note">
+          ✅ This version (1.1) includes the “Advertising &amp; Personalized
+          Ads” section and is intended to be compliant with Google Play, AdMob,
+          and GDPR requirements.
+        </p>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    function setLanguage(lang) {
+      const isPl = lang === "pl";
+
+      document
+        .querySelectorAll(".policy")
+        .forEach((el) => el.classList.remove("active"));
+      document
+        .querySelectorAll(".lang-btn")
+        .forEach((el) => el.classList.remove("active"));
+
+      document
+        .getElementById(isPl ? "policy-pl" : "policy-en")
+        .classList.add("active");
+      document
+        .querySelector(`.lang-btn[data-lang="${lang}"]`)
+        .classList.add("active");
+
+      document.documentElement.lang = lang;
+    }
+  </script>
 </body>
 </html>
+
 
